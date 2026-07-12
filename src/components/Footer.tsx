@@ -22,12 +22,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-white/60 hover:text-white transition-colors">
-                  Contact
+                  {t.footer.contact}
                 </Link>
               </li>
               <li>
                 <Link href="/faq" className="text-white/60 hover:text-white transition-colors">
-                  FAQ
+                  {t.footer.faq}
                 </Link>
               </li>
             </ul>
@@ -35,21 +35,21 @@ export default function Footer() {
 
           {/* Take the test */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-3">🎯 Test</h4>
+            <h4 className="text-sm font-bold text-white mb-3">🎯 {t.footer.test}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/quiz" className="text-white/60 hover:text-white transition-colors">
-                  Take the Test
+                  {t.footer.takeTest}
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="text-white/60 hover:text-white transition-colors">
-                  Blog
+                  {t.footer.blog}
                 </Link>
               </li>
               <li>
                 <Link href="/countries" className="text-white/60 hover:text-white transition-colors">
-                  G20 Countries
+                  {t.footer.g20Countries}
                 </Link>
               </li>
             </ul>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-3">📜 Legal</h4>
+            <h4 className="text-sm font-bold text-white mb-3">{t.footer.legal}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/terms" className="text-white/60 hover:text-white transition-colors">
@@ -71,7 +71,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-white/60 hover:text-white transition-colors">
-                  Data Requests
+                  {t.footer.dataRequests}
                 </Link>
               </li>
             </ul>
@@ -79,7 +79,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-3">✉️ Get in Touch</h4>
+            <h4 className="text-sm font-bold text-white mb-3">{t.footer.getInTouch}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -94,7 +94,7 @@ export default function Footer() {
                   href="mailto:business@loveredflags.com"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Business
+                  {t.footer.business}
                 </a>
               </li>
               <li>
@@ -102,7 +102,7 @@ export default function Footer() {
                   href="mailto:press@loveredflags.com"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Press
+                  {t.footer.press}
                 </a>
               </li>
             </ul>

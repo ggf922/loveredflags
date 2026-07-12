@@ -3,9 +3,11 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import LanguageSwitcher from './LanguageSwitcher'
+import { useLocale } from './LocaleProvider'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const { t } = useLocale()
 
   return (
     <header className="sticky top-0 z-30 backdrop-blur-lg bg-bg-dark/70 border-b border-white/5">
@@ -18,19 +20,19 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <Link href="/quiz" className="text-white/70 hover:text-white transition-colors">
-            Test
+            {t.header.test}
           </Link>
           <Link href="/blog" className="text-white/70 hover:text-white transition-colors">
-            Blog
+            {t.header.blog}
           </Link>
           <Link href="/countries" className="text-white/70 hover:text-white transition-colors">
-            Countries
+            {t.header.countries}
           </Link>
           <Link href="/faq" className="text-white/70 hover:text-white transition-colors">
-            FAQ
+            {t.header.faq}
           </Link>
           <Link href="/about" className="text-white/70 hover:text-white transition-colors">
-            About
+            {t.header.about}
           </Link>
           <LanguageSwitcher />
         </nav>
@@ -41,7 +43,7 @@ export default function Header() {
           <button
             onClick={() => setOpen(!open)}
             className="p-2 text-white/80 hover:text-white"
-            aria-label="Menu"
+            aria-label={t.header.menu}
           >
             {open ? '✕' : '☰'}
           </button>
@@ -57,42 +59,42 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="block py-2 text-white/70 hover:text-white transition-colors"
             >
-              🎯 Test
+              🎯 {t.header.test}
             </Link>
             <Link
               href="/blog"
               onClick={() => setOpen(false)}
               className="block py-2 text-white/70 hover:text-white transition-colors"
             >
-              📚 Blog
+              📚 {t.header.blog}
             </Link>
             <Link
               href="/countries"
               onClick={() => setOpen(false)}
               className="block py-2 text-white/70 hover:text-white transition-colors"
             >
-              🌍 Countries
+              🌍 {t.header.countries}
             </Link>
             <Link
               href="/faq"
               onClick={() => setOpen(false)}
               className="block py-2 text-white/70 hover:text-white transition-colors"
             >
-              ❓ FAQ
+              ❓ {t.header.faq}
             </Link>
             <Link
               href="/about"
               onClick={() => setOpen(false)}
               className="block py-2 text-white/70 hover:text-white transition-colors"
             >
-              ℹ️ About
+              ℹ️ {t.header.about}
             </Link>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
               className="block py-2 text-white/70 hover:text-white transition-colors"
             >
-              📮 Contact
+              📮 {t.header.contact}
             </Link>
           </div>
         </nav>

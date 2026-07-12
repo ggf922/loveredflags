@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useLocale } from './LocaleProvider'
 
 const STORAGE_KEY = 'lrf_cookie_consent_v1'
 
@@ -13,6 +14,7 @@ type ConsentState = {
 }
 
 export default function CookieConsent() {
+  const { t } = useLocale()
   const [visible, setVisible] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
   const [analytics, setAnalytics] = useState(true)
@@ -79,14 +81,12 @@ export default function CookieConsent() {
           <div className="text-3xl shrink-0">🍪</div>
           <div className="flex-1">
             <h3 className="font-bold text-white mb-2">
-              We use cookies to improve your experience
+              {t.cookie.title}
             </h3>
             <p className="text-sm text-white/70 leading-relaxed mb-4">
-              We use essential cookies to run this site. With your permission, we also use analytics
-              cookies (Google Analytics) and advertising cookies (Google AdSense) to keep this test free.
-              You can change your preferences anytime.{' '}
+              {t.cookie.description}{' '}
               <Link href="/privacy" className="text-neon-pink hover:underline">
-                Read our Privacy Policy
+                {t.cookie.readPolicy}
               </Link>
             </p>
 
@@ -95,9 +95,9 @@ export default function CookieConsent() {
                 <label className="flex items-start gap-3">
                   <input type="checkbox" checked disabled className="mt-1 accent-neon-green" />
                   <div className="flex-1">
-                    <div className="font-bold text-sm text-white">✓ Necessary (always on)</div>
+                    <div className="font-bold text-sm text-white">{t.cookie.necessary}</div>
                     <div className="text-xs text-white/60">
-                      Required for the site to function: language preference, quiz state.
+                      {t.cookie.necessaryDesc}
                     </div>
                   </div>
                 </label>
@@ -109,9 +109,9 @@ export default function CookieConsent() {
                     className="mt-1 accent-neon-pink"
                   />
                   <div className="flex-1">
-                    <div className="font-bold text-sm text-white">Analytics (Google Analytics)</div>
+                    <div className="font-bold text-sm text-white">{t.cookie.analytics}</div>
                     <div className="text-xs text-white/60">
-                      Anonymous usage statistics to help us improve the site.
+                      {t.cookie.analyticsDesc}
                     </div>
                   </div>
                 </label>
@@ -123,9 +123,9 @@ export default function CookieConsent() {
                     className="mt-1 accent-neon-pink"
                   />
                   <div className="flex-1">
-                    <div className="font-bold text-sm text-white">Advertising (Google AdSense)</div>
+                    <div className="font-bold text-sm text-white">{t.cookie.ads}</div>
                     <div className="text-xs text-white/60">
-                      Personalized ads that keep this service free.
+                      {t.cookie.adsDesc}
                     </div>
                   </div>
                 </label>
@@ -137,28 +137,28 @@ export default function CookieConsent() {
                 onClick={acceptAll}
                 className="px-5 py-2 bg-gradient-to-r from-neon-pink to-neon-purple text-white text-sm font-bold rounded-full hover:scale-105 transition-transform"
               >
-                Accept All
+                {t.cookie.acceptAll}
               </button>
               {!showDetails ? (
                 <button
                   onClick={() => setShowDetails(true)}
                   className="px-5 py-2 border border-white/20 text-white/80 text-sm rounded-full hover:bg-white/5 transition-colors"
                 >
-                  Customize
+                  {t.cookie.customize}
                 </button>
               ) : (
                 <button
                   onClick={saveCustom}
                   className="px-5 py-2 border border-neon-cyan/40 text-neon-cyan text-sm font-bold rounded-full hover:bg-neon-cyan/10 transition-colors"
                 >
-                  Save Preferences
+                  {t.cookie.savePrefs}
                 </button>
               )}
               <button
                 onClick={rejectAll}
                 className="px-5 py-2 text-white/50 text-sm hover:text-white/80 transition-colors"
               >
-                Reject All
+                {t.cookie.rejectAll}
               </button>
             </div>
           </div>
