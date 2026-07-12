@@ -1,0 +1,11 @@
+import type { MetadataRoute } from 'next'
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      { userAgent: '*', allow: '/', disallow: ['/api/', '/analyzing'] }
+    ],
+    sitemap: 'https://loveredflags.com/sitemap.xml',
+    host: 'https://loveredflags.com'
+  }
+}
