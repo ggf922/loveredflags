@@ -41,6 +41,10 @@ export const viewport: Viewport = {
 }
 
 const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
+// Google Search Console site verification token (used for AdSense site ownership check too).
+// Set via NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION on Vercel once you get the token from
+// https://www.google.com/webmasters/verification or the AdSense signup flow.
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -49,6 +53,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet" />
+        {/* Google Search Console verification — required for AdSense site verification */}
+        {googleSiteVerification && (
+          <meta name="google-site-verification" content={googleSiteVerification} />
+        )}
+        {/* Google AdSense loader — auto-injected once NEXT_PUBLIC_ADSENSE_CLIENT_ID is set.
+            The presence of this script on every page is what AdSense uses to verify the
+            site during the initial application review. */}
         {adsenseClient && (
           <Script
             async
