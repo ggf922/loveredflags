@@ -19,14 +19,21 @@ export const metadata: Metadata = {
     url: 'https://loveredflags.com',
     title: 'Love Red Flag Detector 🚩 | Global Matching Test',
     description: 'What\'s your love red flag? Find your perfect global match from 20 countries. Test yourself now!',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Love Red Flag Detector' }],
-    siteName: 'LoveRedFlags.com'
+    // Provide both JPG (smaller, faster for KakaoTalk/FB) and PNG (higher quality fallback).
+    // Absolute URLs improve reliability on messengers that don't resolve relative paths.
+    images: [
+      { url: 'https://loveredflags.com/og-image.jpg', width: 1200, height: 630, alt: 'Love Red Flag Detector - Global Matching Test', type: 'image/jpeg' },
+      { url: 'https://loveredflags.com/og-image.png', width: 1200, height: 630, alt: 'Love Red Flag Detector - Global Matching Test', type: 'image/png' }
+    ],
+    siteName: 'LoveRedFlags.com',
+    locale: 'en_US'
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Love Red Flag Detector 🚩',
     description: 'What\'s your love red flag? Take the viral test now!',
-    images: ['/og-image.png']
+    images: ['https://loveredflags.com/og-image.jpg'],
+    creator: '@loveredflags'
   },
   robots: { index: true, follow: true },
   icons: { icon: '/favicon.svg', apple: '/apple-touch-icon.png' },
