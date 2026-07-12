@@ -170,6 +170,148 @@ export default function ResultPage() {
         {/* Middle ad */}
         <AdSlot size="native" label="Result After Matching" slotId="result-after-matching" />
 
+        {/* Deep dive: What your type means */}
+        <section className="glass-card p-6 md:p-8 mt-8 mb-8">
+          <h2 className="text-2xl font-bold text-gradient mb-4">🧠 What Your Type Really Means</h2>
+          <p className="text-white/80 leading-relaxed mb-4">
+            The <strong className="text-white">{result.name}</strong> personality type reflects a
+            specific combination of four psychological dimensions measured in this test: your level
+            of emotional attachment (Obsessive vs Independent), how you communicate (Expressive vs
+            Avoidant), your emotional stability (Volatile vs Stable), and your interpersonal control
+            style (Controlling vs Receptive).
+          </p>
+          <p className="text-white/80 leading-relaxed mb-4">
+            At <strong className="text-neon-pink">Level {result.level}/5</strong>, your Red Flag
+            intensity is {result.level <= 2 ? 'relatively low — you tend toward healthier relationship patterns' : result.level === 3 ? 'moderate — you have some patterns worth reflecting on' : 'notable — awareness of these patterns can help you build stronger relationships'}.
+            Remember: red flags are not permanent labels. They are patterns that can be understood,
+            managed, and changed with self-awareness and effort.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4 mt-6">
+            <div className="p-4 bg-neon-green/5 border border-neon-green/20 rounded-lg">
+              <h3 className="font-bold text-neon-green mb-2">💚 Your Strengths</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {result.level <= 2
+                  ? 'You bring emotional stability, thoughtful communication, and healthy boundaries to relationships. Partners typically feel safe and respected around you.'
+                  : result.level === 3
+                    ? 'You bring passion and depth to relationships. When channeled well, your emotional intensity creates deep bonds.'
+                    : 'You bring passionate loyalty and deep emotional investment to relationships. Your intensity, when self-aware, can create powerfully connected partnerships.'}
+              </p>
+            </div>
+            <div className="p-4 bg-yellow-500/5 border border-yellow-500/20 rounded-lg">
+              <h3 className="font-bold text-yellow-400 mb-2">⚠️ Watch Out For</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {result.level <= 2
+                  ? 'Occasionally, your stability can be misread as emotional distance. Communicate warmth explicitly.'
+                  : result.level === 3
+                    ? 'Your emotions can occasionally overwhelm your partner. Practice pausing before big reactions.'
+                    : 'High intensity paired with reactivity can burn out partners. Building emotional regulation skills is your growth edge.'}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Self-improvement tips */}
+        <section className="glass-card p-6 md:p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gradient mb-4">🌱 Growth Tips for {result.name}</h2>
+          <p className="text-white/70 mb-4 text-sm">
+            Research-backed practices to strengthen your relationships:
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+              <span className="text-2xl shrink-0">1️⃣</span>
+              <div>
+                <h4 className="font-bold text-white text-sm mb-1">Practice the pause</h4>
+                <p className="text-white/70 text-sm">
+                  Before reacting emotionally, take 10 seconds. Neuroscience shows this small delay
+                  significantly reduces reactive responses.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+              <span className="text-2xl shrink-0">2️⃣</span>
+              <div>
+                <h4 className="font-bold text-white text-sm mb-1">Name the feeling, tame the feeling</h4>
+                <p className="text-white/70 text-sm">
+                  Simply labeling an emotion ("I feel anxious right now") reduces its intensity by
+                  activating your prefrontal cortex over the amygdala.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+              <span className="text-2xl shrink-0">3️⃣</span>
+              <div>
+                <h4 className="font-bold text-white text-sm mb-1">Use "I" statements, not "You" accusations</h4>
+                <p className="text-white/70 text-sm">
+                  &ldquo;I feel hurt when plans change last minute&rdquo; lands very differently than
+                  &ldquo;You never respect my time.&rdquo; Try it.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+              <span className="text-2xl shrink-0">4️⃣</span>
+              <div>
+                <h4 className="font-bold text-white text-sm mb-1">Repair, don&apos;t rehash</h4>
+                <p className="text-white/70 text-sm">
+                  According to Gottman research, healthy couples don&apos;t argue less — they repair
+                  faster. Focus on getting back to connection, not winning the point.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+              <span className="text-2xl shrink-0">5️⃣</span>
+              <div>
+                <h4 className="font-bold text-white text-sm mb-1">Read: attachment theory basics</h4>
+                <p className="text-white/70 text-sm">
+                  Check out our{' '}
+                  <Link href="/blog/attachment-styles-explained" className="text-neon-pink hover:underline">
+                    guide to attachment styles
+                  </Link>{' '}
+                  to understand your patterns more deeply.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related articles */}
+        <section className="glass-card p-6 md:p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gradient mb-4">📚 Read More</h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            <Link
+              href="/blog/what-are-red-flags-in-dating"
+              className="p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <div className="text-2xl mb-2">🚩</div>
+              <h4 className="font-bold text-white mb-1">What Are Red Flags in Dating?</h4>
+              <p className="text-xs text-white/60">10 warning signs backed by research</p>
+            </Link>
+            <Link
+              href="/blog/attachment-styles-explained"
+              className="p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <div className="text-2xl mb-2">🔗</div>
+              <h4 className="font-bold text-white mb-1">Attachment Styles Explained</h4>
+              <p className="text-xs text-white/60">Anxious, avoidant, secure, and more</p>
+            </Link>
+            <Link
+              href="/blog/signs-of-healthy-relationship"
+              className="p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <div className="text-2xl mb-2">💚</div>
+              <h4 className="font-bold text-white mb-1">Signs of Healthy Relationships</h4>
+              <p className="text-xs text-white/60">Green flags that predict lasting love</p>
+            </Link>
+            <Link
+              href="/blog/how-to-communicate-in-relationship"
+              className="p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <div className="text-2xl mb-2">💬</div>
+              <h4 className="font-bold text-white mb-1">Communication in Relationships</h4>
+              <p className="text-xs text-white/60">The Gottman method simplified</p>
+            </Link>
+          </div>
+        </section>
+
         {/* Share section */}
         <section className="mt-12 text-center">
           <h2 className="text-2xl font-bold mb-2">{t.result.shareTitle}</h2>

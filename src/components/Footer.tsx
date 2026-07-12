@@ -7,21 +7,113 @@ export default function Footer() {
   const { t } = useLocale()
 
   return (
-    <footer className="mt-16 border-t border-white/5 py-8 px-4">
-      <div className="max-w-5xl mx-auto text-center">
-        <div className="flex flex-wrap justify-center gap-6 text-sm mb-4">
-          <Link href="/about" className="text-white/60 hover:text-white transition-colors">
-            {t.footer.about}
-          </Link>
-          <Link href="/terms" className="text-white/60 hover:text-white transition-colors">
-            {t.footer.terms}
-          </Link>
-          <Link href="/privacy" className="text-white/60 hover:text-white transition-colors">
-            {t.footer.privacy}
-          </Link>
+    <footer className="mt-16 border-t border-white/5 py-12 px-4">
+      <div className="max-w-5xl mx-auto">
+        {/* Grid links */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          {/* About */}
+          <div>
+            <h4 className="text-sm font-bold text-white mb-3">🚩 LoveRedFlags</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/about" className="text-white/60 hover:text-white transition-colors">
+                  {t.footer.about}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-white/60 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-white/60 hover:text-white transition-colors">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Take the test */}
+          <div>
+            <h4 className="text-sm font-bold text-white mb-3">🎯 Test</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/quiz" className="text-white/60 hover:text-white transition-colors">
+                  Take the Test
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-white/60 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/countries" className="text-white/60 hover:text-white transition-colors">
+                  G20 Countries
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-bold text-white mb-3">📜 Legal</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/terms" className="text-white/60 hover:text-white transition-colors">
+                  {t.footer.terms}
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-white/60 hover:text-white transition-colors">
+                  {t.footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-white/60 hover:text-white transition-colors">
+                  Data Requests
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-sm font-bold text-white mb-3">✉️ Get in Touch</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  href="mailto:hello@loveredflags.com"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  hello@loveredflags.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:business@loveredflags.com"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Business
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:press@loveredflags.com"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Press
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p className="text-white/40 text-xs mb-1">{t.footer.tagline}</p>
-        <p className="text-white/30 text-xs">{t.footer.copyright}</p>
+
+        {/* Bottom */}
+        <div className="pt-6 border-t border-white/5 text-center">
+          <p className="text-white/40 text-xs mb-1">{t.footer.tagline}</p>
+          <p className="text-white/30 text-xs">{t.footer.copyright}</p>
+        </div>
       </div>
     </footer>
   )

@@ -26,22 +26,32 @@ A viral, multi-language personality test that reveals your dating "red flags" an
 - ✅ **SNS share buttons** (X, WhatsApp, Facebook, native share, link copy)
 - ✅ **Supabase-backed statistics** — real-time "X% of users have your type"
 - ✅ **AdSense-ready** — 6+ ad slots per user journey (banner refreshes every question)
-- ✅ **SEO optimized** — sitemap.xml, robots.txt, per-page metadata, Open Graph
+- ✅ **SEO optimized** — sitemap.xml (with all 45+ URLs), robots.txt, per-page metadata, Open Graph, JSON-LD structured data
 - ✅ **Legal pages** — Terms of Service, Privacy Policy, About (AdSense-approval ready)
+
+### 🎯 AdSense Approval Package (NEW)
+- ✅ **10 original long-form blog articles** (1,500+ chars each, EN + KO) — psychology of dating, red flags, attachment styles, love languages, toxic relationships, communication, healing after breakup, dating apps, cross-cultural dating, healthy relationships
+- ✅ **20 G20 country dating culture pages** — overview, courtship, red/green flags, popular apps, cultural notes for each
+- ✅ **FAQ page** with 20 questions across 5 categories (general/test/results/privacy/technical) + FAQPage JSON-LD
+- ✅ **Contact page** with 6 subjects, Supabase-backed form submission, spam filter
+- ✅ **Enhanced About page** — mission, methodology (4 psychology frameworks), values, technology stack, disclaimers
+- ✅ **Cookie Consent banner** with granular controls (Necessary/Analytics/Ads), LocalStorage persistence, custom event dispatch
+- ✅ **Expanded result pages** — "What Your Type Really Means", growth tips, related articles, deep dive sections
+- ✅ **Semantic sitemap** including all 10 blog posts + 20 country pages + FAQ + Contact
+- ✅ **Contact API route** (`/api/contact`) → Supabase `contact_messages` table
 
 ### Not Yet Implemented
 - ⏳ Instagram Story image generation (html2canvas library included, UI pending)
 - ⏳ Real affiliate link integration (Skyscanner API / Booking.com)
-- ⏳ Custom domain SSL after DNS setup
+- ⏳ Blog/FAQ/Contact strings in 8-language locales (currently EN in-page — sufficient for AdSense)
 - ⏳ Google Analytics 4 integration
-- ⏳ Additional languages (German, French - user demand pending)
 
 ### Recommended Next Steps
-1. **Deploy to Vercel** — Import GitHub repo, add env vars, connect domain
-2. **Setup Supabase** — Run `supabase/schema.sql` in Supabase Dashboard
-3. **Apply for AdSense** — After 2-4 weeks of organic traffic
-4. **Add affiliate links** — Sign up for Skyscanner/Booking.com partner programs
-5. **Marketing** — Post viral clips on TikTok with `#redflagtest` hashtag
+1. **Run `supabase/contact_messages.sql`** in Supabase to enable Contact form storage
+2. **Apply for Google AdSense** — content package is now well beyond thin-content threshold
+3. **Add Google Analytics 4** for traffic tracking
+4. **Localize new pages** into 8 languages once AdSense is approved
+5. **Marketing** — Blog articles are SEO-ready, share on Reddit r/dating, TikTok
 
 ---
 
@@ -52,11 +62,18 @@ A viral, multi-language personality test that reveals your dating "red flags" an
 | `/` | Landing page with CTA |
 | `/quiz` | 12-question quiz (state managed client-side) |
 | `/analyzing` | 3-second "analyzing" transition with interstitial ad |
-| `/result/[code]` | Result page (16 codes: ICSR, IASR, ICVR, ..., OCVC, OAVC) |
-| `/about` | About page (AdSense requirement) |
+| `/result/[code]` | Expanded result page (16 codes) + deep-dive analysis + growth tips |
+| `/blog` | Blog listing page (10 articles) |
+| `/blog/[slug]` | Individual blog post (SSG, JSON-LD schema, markdown-rendered) |
+| `/countries` | G20 countries listing (20 nations) |
+| `/countries/[code]` | Per-country dating culture guide (SSG, 20 pages: kr/us/jp/cn/gb/fr/de/it/ca/au/ru/br/in/mx/id/sa/tr/ar/za/es) |
+| `/faq` | FAQ page with 20 questions + FAQPage JSON-LD |
+| `/contact` | Contact form with 6 subjects |
+| `/api/contact` | Contact API (POST) → Supabase `contact_messages` |
+| `/about` | Enhanced About page (mission, methodology, values, tech stack) |
 | `/terms` | Terms of Service |
 | `/privacy` | Privacy Policy |
-| `/sitemap.xml` | Auto-generated sitemap |
+| `/sitemap.xml` | Auto-generated sitemap (45+ URLs) |
 | `/robots.txt` | Auto-generated robots.txt |
 
 ---
