@@ -1,18 +1,23 @@
 // Blog posts data — for AdSense approval (long-form original content)
 // Each post: 1500+ characters, SEO-optimized, original psychology content
+// Multilingual: title/description have all 8 langs; content has en/ko (others fallback to en)
+
+import type { Locale } from '@/types'
+
+// title/description: all 8 languages required
+// content: en required, ko optional, others fallback via getText helper
+type LocalizedTitle = Record<Locale, string>
+type LocalizedContent = { en: string; ko?: string } & Partial<Record<Locale, string>>
 
 export type BlogPost = {
   slug: string
-  title: { en: string; ko: string }
-  description: { en: string; ko: string }
+  title: LocalizedTitle
+  description: LocalizedTitle
   category: string
   readTime: number
   publishedAt: string
   emoji: string
-  content: {
-    en: string
-    ko: string
-  }
+  content: LocalizedContent
   tags: string[]
 }
 
@@ -21,11 +26,23 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'what-are-red-flags-in-dating',
     title: {
       en: 'What Are Red Flags in Dating? 10 Warning Signs You Should Never Ignore',
-      ko: '연애에서 Red Flag란? 절대 무시하면 안 되는 위험 신호 10가지'
+      ko: '연애에서 Red Flag란? 절대 무시하면 안 되는 위험 신호 10가지',
+      ja: 'デートにおけるレッドフラッグとは?絶対に無視してはいけない10の警告サイン',
+      es: '¿Qué son las banderas rojas en las citas? 10 señales de advertencia que nunca debes ignorar',
+      pt: 'O que são bandeiras vermelhas em relacionamentos? 10 sinais de alerta que você nunca deve ignorar',
+      ar: 'ما هي الأعلام الحمراء في المواعدة؟ 10 علامات تحذيرية يجب ألا تتجاهلها أبدًا',
+      ru: 'Что такое красные флаги в отношениях? 10 предупреждающих знаков, которые нельзя игнорировать',
+      zh: '什么是约会中的危险信号?10个绝对不能忽视的警告信号'
     },
     description: {
       en: 'Discover the top 10 red flags in relationships backed by psychological research. Learn how to identify toxic behaviors before they hurt you.',
-      ko: '심리학 연구 기반, 연애 관계에서 반드시 알아야 할 위험 신호 10가지. 상처받기 전에 알아채는 방법.'
+      ko: '심리학 연구 기반, 연애 관계에서 반드시 알아야 할 위험 신호 10가지. 상처받기 전에 알아채는 방법.',
+      ja: '心理学研究に基づく恋愛関係のトップ10レッドフラッグを発見。傷つけられる前に有害な行動を特定する方法を学びましょう。',
+      es: 'Descubre las 10 principales banderas rojas en las relaciones respaldadas por investigación psicológica. Aprende a identificar comportamientos tóxicos antes de que te lastimen.',
+      pt: 'Descubra as 10 principais bandeiras vermelhas em relacionamentos apoiadas por pesquisas psicológicas. Aprenda a identificar comportamentos tóxicos antes que eles te machuquem.',
+      ar: 'اكتشف أهم 10 أعلام حمراء في العلاقات مدعومة بالبحث النفسي. تعلم كيفية التعرف على السلوكيات السامة قبل أن تؤذيك.',
+      ru: 'Откройте топ-10 красных флагов в отношениях, подкреплённых психологическими исследованиями. Научитесь распознавать токсичное поведение до того, как оно причинит вам боль.',
+      zh: '发现由心理学研究支持的关系中十大危险信号。学习如何在有害行为伤害你之前识别它们。'
     },
     category: 'psychology',
     readTime: 8,
@@ -229,11 +246,23 @@ Curious about your own red flags? Take our free 12-question personality test to 
     slug: 'attachment-styles-explained',
     title: {
       en: 'The 4 Attachment Styles Explained: Which One Are You?',
-      ko: '4가지 애착 유형 완벽 정리: 당신은 어떤 유형인가요?'
+      ko: '4가지 애착 유형 완벽 정리: 당신은 어떤 유형인가요?',
+      ja: '4つの愛着スタイル解説:あなたはどのタイプ?',
+      es: 'Los 4 estilos de apego explicados: ¿Cuál eres tú?',
+      pt: 'Os 4 estilos de apego explicados: Qual é o seu?',
+      ar: 'شرح أنماط التعلق الأربعة: أيها أنت؟',
+      ru: '4 стиля привязанности: какой ваш?',
+      zh: '4种依恋类型详解:你是哪一种?'
     },
     description: {
       en: 'Understand the four attachment styles — secure, anxious, avoidant, and disorganized — and how they shape your love life.',
-      ko: '안정형, 불안형, 회피형, 혼란형 — 4가지 애착 유형이 당신의 연애를 어떻게 형성하는지 알아보세요.'
+      ko: '안정형, 불안형, 회피형, 혼란형 — 4가지 애착 유형이 당신의 연애를 어떻게 형성하는지 알아보세요.',
+      ja: '安定型、不安型、回避型、混乱型 — 4つの愛着スタイルがあなたの恋愛をどのように形作るかを理解しましょう。',
+      es: 'Comprende los cuatro estilos de apego — seguro, ansioso, evitativo y desorganizado — y cómo dan forma a tu vida amorosa.',
+      pt: 'Compreenda os quatro estilos de apego — seguro, ansioso, evitativo e desorganizado — e como eles moldam sua vida amorosa.',
+      ar: 'افهم أنماط التعلق الأربعة — الآمن، والقلق، والتجنبي، وغير المنظم — وكيف تشكل حياتك العاطفية.',
+      ru: 'Поймите четыре стиля привязанности — надёжный, тревожный, избегающий и дезорганизованный — и как они формируют вашу любовную жизнь.',
+      zh: '理解四种依恋类型——安全型、焦虑型、回避型和混乱型——以及它们如何塑造你的爱情生活。'
     },
     category: 'psychology',
     readTime: 10,
@@ -495,11 +524,23 @@ Ready to go deeper? Take our free personality quiz to discover your Love Red Fla
     slug: 'love-languages-guide',
     title: {
       en: 'The 5 Love Languages: How to Speak Your Partner\'s Language',
-      ko: '5가지 사랑의 언어: 파트너의 언어로 사랑을 표현하는 법'
+      ko: '5가지 사랑의 언어: 파트너의 언어로 사랑을 표현하는 법',
+      ja: '5つの愛の言語:パートナーの言語で愛を伝える方法',
+      es: 'Los 5 lenguajes del amor: Cómo hablar el idioma de tu pareja',
+      pt: 'As 5 linguagens do amor: Como falar a linguagem do seu parceiro',
+      ar: 'لغات الحب الخمس: كيفية التحدث بلغة شريكك',
+      ru: '5 языков любви: как говорить на языке вашего партнёра',
+      zh: '5种爱之语言:如何用伴侣的语言表达爱'
     },
     description: {
       en: 'Learn Gary Chapman\'s famous 5 love languages and discover how to express love in the way your partner truly understands.',
-      ko: '게리 채프먼의 유명한 5가지 사랑의 언어를 배우고, 파트너가 진정으로 이해하는 방식으로 사랑을 표현하는 법을 알아보세요.'
+      ko: '게리 채프먼의 유명한 5가지 사랑의 언어를 배우고, 파트너가 진정으로 이해하는 방식으로 사랑을 표현하는 법을 알아보세요.',
+      ja: 'ゲイリー・チャップマンの有名な5つの愛の言語を学び、パートナーが本当に理解する方法で愛を表現する方法を発見しましょう。',
+      es: 'Aprende los famosos 5 lenguajes del amor de Gary Chapman y descubre cómo expresar amor de la manera que tu pareja realmente entiende.',
+      pt: 'Aprenda as famosas 5 linguagens do amor de Gary Chapman e descubra como expressar amor da maneira que seu parceiro realmente entende.',
+      ar: 'تعلم لغات الحب الخمس الشهيرة لغاري تشابمان واكتشف كيفية التعبير عن الحب بالطريقة التي يفهمها شريكك حقًا.',
+      ru: 'Изучите знаменитые 5 языков любви Гэри Чапмена и узнайте, как выражать любовь так, чтобы ваш партнёр действительно её понимал.',
+      zh: '学习Gary Chapman著名的5种爱之语言,发现如何用你伴侣真正理解的方式表达爱。'
     },
     category: 'psychology',
     readTime: 7,
@@ -835,11 +876,23 @@ Curious about your relationship patterns? Take our free 12-question Love Red Fla
     slug: 'toxic-relationship-signs',
     title: {
       en: '15 Signs You\'re in a Toxic Relationship (And What to Do)',
-      ko: '독한 관계의 15가지 신호 (그리고 어떻게 해야 할까)'
+      ko: '독한 관계의 15가지 신호 (그리고 어떻게 해야 할까)',
+      ja: '毒のある関係の15のサイン(そして何をすべきか)',
+      es: '15 Señales de que Estás en una Relación Tóxica (Y Qué Hacer)',
+      pt: '15 Sinais de que Você Está em um Relacionamento Tóxico (e O Que Fazer)',
+      ar: '15 علامة تدل على أنك في علاقة سامة (وما يجب فعله)',
+      ru: '15 признаков токсичных отношений (и что делать)',
+      zh: '毒性关系的15个迹象(以及该怎么办)'
     },
     description: {
       en: 'Learn to identify the subtle and obvious signs of a toxic relationship, backed by relationship psychology research.',
-      ko: '심리학 연구 기반, 독한 관계의 미묘하고 명확한 신호를 식별하고 대처하는 방법을 알아보세요.'
+      ko: '심리학 연구 기반, 독한 관계의 미묘하고 명확한 신호를 식별하고 대처하는 방법을 알아보세요.',
+      ja: '関係心理学の研究に基づき、毒のある関係の微妙で明白なサインを識別する方法を学びましょう。',
+      es: 'Aprende a identificar las señales sutiles y obvias de una relación tóxica, respaldadas por investigaciones en psicología de las relaciones.',
+      pt: 'Aprenda a identificar os sinais sutis e óbvios de um relacionamento tóxico, apoiados por pesquisas em psicologia das relações.',
+      ar: 'تعلم كيفية التعرف على العلامات الدقيقة والواضحة للعلاقة السامة، مدعومة بأبحاث علم نفس العلاقات.',
+      ru: 'Научитесь распознавать тонкие и очевидные признаки токсичных отношений, подкреплённые исследованиями психологии отношений.',
+      zh: '基于关系心理学研究,学习识别毒性关系的微妙和明显迹象。'
     },
     category: 'psychology',
     readTime: 9,
@@ -1249,11 +1302,23 @@ Curious about the patterns in your own dating life? Take our free 12-question Lo
     slug: 'dating-culture-around-the-world',
     title: {
       en: 'Dating Culture Around the World: A G20 Country Guide',
-      ko: '세계의 데이팅 문화: G20 20개국 완벽 가이드'
+      ko: '세계의 데이팅 문화: G20 20개국 완벽 가이드',
+      ja: '世界のデーティング文化:G20 20カ国完全ガイド',
+      es: 'Cultura del Dating en el Mundo: Guía Completa de los Países del G20',
+      pt: 'Cultura de Namoro pelo Mundo: Guia dos Países do G20',
+      ar: 'ثقافة المواعدة حول العالم: دليل دول مجموعة العشرين',
+      ru: 'Культура свиданий по всему миру: путеводитель по странам G20',
+      zh: '世界各地的约会文化:G20国家完整指南'
     },
     description: {
       en: 'From K-drama romance in Korea to passionate love in Italy, discover how 20 major countries approach love and dating.',
-      ko: '한국의 K-드라마 로맨스부터 이탈리아의 열정적 사랑까지, 20개 주요국의 사랑과 데이팅 방식을 알아보세요.'
+      ko: '한국의 K-드라마 로맨스부터 이탈리아의 열정적 사랑까지, 20개 주요국의 사랑과 데이팅 방식을 알아보세요.',
+      ja: '韓国のKドラマロマンスからイタリアの情熱的な愛まで、主要20カ国の愛とデーティングのアプローチを発見しましょう。',
+      es: 'Desde el romance de los K-dramas en Corea hasta el amor apasionado en Italia, descubre cómo 20 países importantes abordan el amor y las citas.',
+      pt: 'Do romance dos K-dramas na Coreia ao amor apaixonado na Itália, descubra como 20 grandes países abordam o amor e o namoro.',
+      ar: 'من رومانسية الدراما الكورية في كوريا إلى الحب العاطفي في إيطاليا، اكتشف كيف تتعامل 20 دولة رئيسية مع الحب والمواعدة.',
+      ru: 'От романтики корейских дорам до страстной итальянской любви — узнайте, как 20 крупных стран подходят к любви и свиданиям.',
+      zh: '从韩国的K-drama浪漫到意大利的激情之爱,探索20个主要国家如何看待爱情和约会。'
     },
     category: 'culture',
     readTime: 12,

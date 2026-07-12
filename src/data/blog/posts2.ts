@@ -6,11 +6,23 @@ export const BLOG_POSTS_PART_2: BlogPost[] = [
     slug: 'psychology-of-attraction',
     title: {
       en: 'The Science of Attraction: Why We Fall for Who We Fall For',
-      ko: '끌림의 과학: 우리는 왜 그런 사람에게 끌리는가'
+      ko: '끌림의 과학: 우리는 왜 그런 사람에게 끌리는가',
+      ja: '魅力の科学:なぜ私たちは特定の人に惹かれるのか',
+      es: 'La Ciencia de la Atracción: Por Qué Nos Enamoramos de Quien Nos Enamoramos',
+      pt: 'A Ciência da Atração: Por Que Nos Apaixonamos por Quem Nos Apaixonamos',
+      ar: 'علم الانجذاب: لماذا نقع في حب من نقع في حبه',
+      ru: 'Наука влечения: почему мы влюбляемся именно в тех, в кого влюбляемся',
+      zh: '吸引力的科学:我们为何会爱上那个人'
     },
     description: {
       en: 'Discover the psychological, biological, and cultural factors that shape romantic attraction.',
-      ko: '로맨틱한 끌림을 형성하는 심리적, 생물학적, 문화적 요소를 발견하세요.'
+      ko: '로맨틱한 끌림을 형성하는 심리적, 생물학적, 문화적 요소를 발견하세요.',
+      ja: 'ロマンチックな魅力を形作る心理的、生物学的、文化的要因を発見しましょう。',
+      es: 'Descubre los factores psicológicos, biológicos y culturales que dan forma a la atracción romántica.',
+      pt: 'Descubra os fatores psicológicos, biológicos e culturais que moldam a atração romântica.',
+      ar: 'اكتشف العوامل النفسية والبيولوجية والثقافية التي تشكل الانجذاب الرومانسي.',
+      ru: 'Откройте для себя психологические, биологические и культурные факторы, формирующие романтическое влечение.',
+      zh: '探索塑造浪漫吸引力的心理、生物和文化因素。'
     },
     category: 'psychology',
     readTime: 8,
@@ -368,11 +380,23 @@ Curious about the patterns in your own attraction? Take our free Love Red Flag t
     slug: 'how-to-communicate-in-relationship',
     title: {
       en: 'How to Communicate in a Relationship: 7 Skills That Change Everything',
-      ko: '관계에서 소통하는 방법: 모든 것을 바꾸는 7가지 기술'
+      ko: '관계에서 소통하는 방법: 모든 것을 바꾸는 7가지 기술',
+      ja: '関係でコミュニケーションを取る方法:すべてを変える7つのスキル',
+      es: 'Cómo Comunicarte en una Relación: 7 Habilidades que lo Cambian Todo',
+      pt: 'Como se Comunicar em um Relacionamento: 7 Habilidades que Mudam Tudo',
+      ar: 'كيفية التواصل في العلاقة: 7 مهارات تغير كل شيء',
+      ru: 'Как общаться в отношениях: 7 навыков, которые меняют всё',
+      zh: '如何在关系中沟通:改变一切的7项技巧'
     },
     description: {
       en: 'Master the communication skills that transform relationships from frustrating to fulfilling.',
-      ko: '관계를 좌절스러운 것에서 만족스러운 것으로 변화시키는 소통 기술을 마스터하세요.'
+      ko: '관계를 좌절스러운 것에서 만족스러운 것으로 변화시키는 소통 기술을 마스터하세요.',
+      ja: '関係をイライラするものから満足できるものへと変えるコミュニケーションスキルをマスターしましょう。',
+      es: 'Domina las habilidades de comunicación que transforman las relaciones frustrantes en satisfactorias.',
+      pt: 'Domine as habilidades de comunicação que transformam relacionamentos frustrantes em gratificantes.',
+      ar: 'أتقن مهارات التواصل التي تحول العلاقات من محبطة إلى مُرضية.',
+      ru: 'Освойте навыки общения, которые превращают тяготящие отношения в наполненные.',
+      zh: '掌握将关系从沮丧转变为充实的沟通技巧。'
     },
     category: 'communication',
     readTime: 8,
@@ -912,11 +936,23 @@ Curious about how your communication style shapes your relationships? Take our f
     slug: 'signs-of-healthy-relationship',
     title: {
       en: '10 Signs of a Truly Healthy Relationship (Green Flags)',
-      ko: '진정으로 건강한 관계의 10가지 신호 (그린 플래그)'
+      ko: '진정으로 건강한 관계의 10가지 신호 (그린 플래그)',
+      ja: '本当に健全な関係の10のサイン(グリーンフラッグ)',
+      es: '10 Señales de una Relación Verdaderamente Sana (Green Flags)',
+      pt: '10 Sinais de um Relacionamento Verdadeiramente Saudável (Green Flags)',
+      ar: '10 علامات على علاقة صحية حقاً (الأعلام الخضراء)',
+      ru: '10 признаков по-настоящему здоровых отношений (зелёные флаги)',
+      zh: '真正健康关系的10个迹象(绿旗)'
     },
     description: {
       en: 'Learn to recognize the green flags of a healthy relationship — because knowing what right looks like matters.',
-      ko: '건강한 관계의 그린 플래그를 인식하는 법을 배우세요 — 옳은 것이 어떻게 보이는지 아는 것이 중요합니다.'
+      ko: '건강한 관계의 그린 플래그를 인식하는 법을 배우세요 — 옳은 것이 어떻게 보이는지 아는 것이 중요합니다.',
+      ja: '健全な関係のグリーンフラッグを認識する方法を学びましょう — 正しい姿を知ることが大切です。',
+      es: 'Aprende a reconocer las green flags de una relación sana — porque saber cómo se ve lo correcto importa.',
+      pt: 'Aprenda a reconhecer as green flags de um relacionamento saudável — porque saber como é o certo importa.',
+      ar: 'تعلم كيفية التعرف على الأعلام الخضراء لعلاقة صحية — لأن معرفة كيف يبدو الصحيح أمر مهم.',
+      ru: 'Научитесь распознавать зелёные флаги здоровых отношений — ведь важно знать, как выглядит правильное.',
+      zh: '学会识别健康关系的绿旗 — 因为知道什么是正确的很重要。'
     },
     category: 'psychology',
     readTime: 7,
@@ -1392,11 +1428,23 @@ Curious about your own dating patterns? Take our free 12-question Love Red Flag 
     slug: 'dating-apps-modern-love',
     title: {
       en: 'Dating Apps and Modern Love: How to Not Lose Your Mind',
-      ko: '데이팅 앱과 현대 사랑: 정신을 잃지 않는 법'
+      ko: '데이팅 앱과 현대 사랑: 정신을 잃지 않는 법',
+      ja: 'デーティングアプリと現代の愛:正気を失わない方法',
+      es: 'Apps de Citas y Amor Moderno: Cómo No Perder la Cabeza',
+      pt: 'Apps de Namoro e Amor Moderno: Como Não Perder a Cabeça',
+      ar: 'تطبيقات المواعدة والحب الحديث: كيف لا تفقد عقلك',
+      ru: 'Приложения для знакомств и современная любовь: как не сойти с ума',
+      zh: '约会应用与现代爱情:如何保持理智'
     },
     description: {
       en: 'Navigate modern dating apps without burnout. Tips for meaningful connections in the swipe era.',
-      ko: '번아웃 없이 현대 데이팅 앱을 탐색하세요. 스와이프 시대의 의미 있는 연결을 위한 팁.'
+      ko: '번아웃 없이 현대 데이팅 앱을 탐색하세요. 스와이프 시대의 의미 있는 연결을 위한 팁.',
+      ja: 'バーンアウトなしで現代のデーティングアプリをナビゲート。スワイプ時代の意味のあるつながりのためのヒント。',
+      es: 'Navega las apps de citas modernas sin agotarte. Consejos para conexiones significativas en la era del swipe.',
+      pt: 'Navegue pelos apps de namoro modernos sem se esgotar. Dicas para conexões significativas na era do swipe.',
+      ar: 'تعامل مع تطبيقات المواعدة الحديثة دون إرهاق. نصائح للاتصالات ذات المعنى في عصر التمرير.',
+      ru: 'Ориентируйтесь в современных приложениях для знакомств без выгорания. Советы для осмысленных связей в эпоху свайпов.',
+      zh: '在不倦怠的情况下驾驭现代约会应用。滑动时代建立有意义连接的技巧。'
     },
     category: 'dating',
     readTime: 8,
@@ -2032,11 +2080,23 @@ Curious about your own dating patterns? Take our free 12-question Love Red Flag 
     slug: 'how-to-heal-after-breakup',
     title: {
       en: 'How to Heal After a Breakup: A Complete Recovery Guide',
-      ko: '이별 후 치유하는 방법: 완전한 회복 가이드'
+      ko: '이별 후 치유하는 방법: 완전한 회복 가이드',
+      ja: '別れの後に癒す方法:完全な回復ガイド',
+      es: 'Cómo Sanar Después de una Ruptura: Guía Completa de Recuperación',
+      pt: 'Como se Curar Após um Término: Guia Completo de Recuperação',
+      ar: 'كيفية الشفاء بعد الانفصال: دليل التعافي الكامل',
+      ru: 'Как исцелиться после расставания: полное руководство по восстановлению',
+      zh: '分手后如何疗愈:完整的康复指南'
     },
     description: {
       en: 'Practical, psychology-backed strategies to heal your heart, rebuild yourself, and love again after a breakup.',
-      ko: '이별 후 마음을 치유하고, 자신을 재건하고, 다시 사랑하기 위한 실용적이고 심리학 기반의 전략.'
+      ko: '이별 후 마음을 치유하고, 자신을 재건하고, 다시 사랑하기 위한 실용적이고 심리학 기반의 전략.',
+      ja: '別れの後に心を癒し、自分を再構築し、再び愛するための実用的で心理学に基づいた戦略。',
+      es: 'Estrategias prácticas respaldadas por la psicología para sanar tu corazón, reconstruirte y volver a amar después de una ruptura.',
+      pt: 'Estratégias práticas apoiadas pela psicologia para curar seu coração, se reconstruir e amar novamente após um término.',
+      ar: 'استراتيجيات عملية مدعومة بعلم النفس لشفاء قلبك، وإعادة بناء نفسك، والحب مرة أخرى بعد الانفصال.',
+      ru: 'Практические, основанные на психологии стратегии, чтобы исцелить сердце, восстановить себя и снова полюбить после расставания.',
+      zh: '基于心理学的实用策略,帮助你在分手后疗愈心灵、重建自我、再次去爱。'
     },
     category: 'psychology',
     readTime: 10,
