@@ -305,6 +305,21 @@ const en = {
     3: 'Yellow Flag',
     4: 'Red Flag Alert',
     5: 'Certified Danger Zone'
+  },
+  businessInfo: {
+    heading: 'Publisher Information',
+    subheading: 'Legal information about the site operator',
+    legalName: 'Business Name',
+    brand: 'Brand',
+    representative: 'Representative',
+    businessNumber: 'Business Registration No.',
+    mailOrderNumber: 'Mail-order Business Reg. No.',
+    address: 'Address',
+    email: 'Email',
+    phone: 'Phone',
+    dataController: 'Data Controller',
+    dataControllerDesc: 'The following entity is responsible for processing personal data collected through this website:',
+    publisherDesc: 'This website is operated by the following business entity in compliance with the Korean Act on Consumer Protection in Electronic Commerce (전자상거래법) and Google AdSense publisher identification requirements.'
   }
 }
 

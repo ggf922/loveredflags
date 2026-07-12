@@ -307,6 +307,21 @@ const zh: LocaleStrings = {
     3: '黄旗',
     4: '红旗警报',
     5: '认证危险区'
+  },
+  businessInfo: {
+    heading: '发布商信息',
+    subheading: '网站运营商法律信息',
+    legalName: '商号',
+    brand: '品牌',
+    representative: '代表人',
+    businessNumber: '营业执照号',
+    mailOrderNumber: '通信销售业登记号',
+    address: '地址',
+    email: '邮箱',
+    phone: '电话',
+    dataController: '数据处理者',
+    dataControllerDesc: '以下实体负责处理通过本网站收集的个人数据:',
+    publisherDesc: '本网站由以下商业实体运营,符合韩国电子商务法及Google AdSense发布商身份识别要求。'
   }
 }
 

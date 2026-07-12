@@ -2,8 +2,13 @@
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BusinessInfoCard from '@/components/BusinessInfoCard'
+import { useLocale } from '@/components/LocaleProvider'
+import { BUSINESS_INFO } from '@/data/business'
 
 export default function TermsPage() {
+  const { t } = useLocale()
+
   return (
     <>
       <Header />
@@ -12,6 +17,13 @@ export default function TermsPage() {
 
         <div className="glass-card p-6 md:p-8 space-y-6 text-white/85 leading-relaxed text-sm">
           <p className="text-white/60">Last updated: January 2025</p>
+
+          {/* Publisher / Business Information — required for AdSense and 전자상거래법 */}
+          <section>
+            <h2 className="text-lg font-bold mb-2 text-white">0. {t.businessInfo.heading}</h2>
+            <p className="mb-3">{t.businessInfo.publisherDesc}</p>
+            <BusinessInfoCard variant="inline" showHeading={false} />
+          </section>
 
           <section>
             <h2 className="text-lg font-bold mb-2 text-white">1. Acceptance of Terms</h2>
@@ -66,7 +78,17 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-lg font-bold mb-2 text-white">9. Contact</h2>
-            <p>Questions? Contact <a href="mailto:hello@loveredflags.com" className="text-neon-pink hover:underline">hello@loveredflags.com</a></p>
+            <p>
+              Questions? Contact{' '}
+              <a href={`mailto:${BUSINESS_INFO.email}`} className="text-neon-pink hover:underline break-all">
+                {BUSINESS_INFO.email}
+              </a>
+              {' '}or call{' '}
+              <a href={`tel:${BUSINESS_INFO.phoneIntl}`} className="text-neon-pink hover:underline">
+                {BUSINESS_INFO.phone}
+              </a>
+              .
+            </p>
           </section>
         </div>
       </main>

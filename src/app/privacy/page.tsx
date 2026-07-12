@@ -2,8 +2,13 @@
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BusinessInfoCard from '@/components/BusinessInfoCard'
+import { useLocale } from '@/components/LocaleProvider'
+import { BUSINESS_INFO } from '@/data/business'
 
 export default function PrivacyPage() {
+  const { t } = useLocale()
+
   return (
     <>
       <Header />
@@ -12,6 +17,13 @@ export default function PrivacyPage() {
 
         <div className="glass-card p-6 md:p-8 space-y-6 text-white/85 leading-relaxed text-sm">
           <p className="text-white/60">Last updated: January 2025</p>
+
+          {/* Data Controller (개인정보처리자) — required by K-DPA, GDPR, and AdSense */}
+          <section>
+            <h2 className="text-lg font-bold mb-2 text-white">0. {t.businessInfo.dataController}</h2>
+            <p className="mb-3">{t.businessInfo.dataControllerDesc}</p>
+            <BusinessInfoCard variant="inline" showHeading={false} />
+          </section>
 
           <section>
             <h2 className="text-lg font-bold mb-2 text-white">1. Information We Collect</h2>
@@ -82,7 +94,17 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-lg font-bold mb-2 text-white">8. Contact</h2>
-            <p>Privacy concerns? Contact <a href="mailto:privacy@loveredflags.com" className="text-neon-pink hover:underline">privacy@loveredflags.com</a></p>
+            <p>
+              Privacy concerns? Contact{' '}
+              <a href={`mailto:${BUSINESS_INFO.email}`} className="text-neon-pink hover:underline break-all">
+                {BUSINESS_INFO.email}
+              </a>
+              {' '}or call{' '}
+              <a href={`tel:${BUSINESS_INFO.phoneIntl}`} className="text-neon-pink hover:underline">
+                {BUSINESS_INFO.phone}
+              </a>
+              .
+            </p>
           </section>
         </div>
       </main>

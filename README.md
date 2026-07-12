@@ -29,6 +29,17 @@ A viral, multi-language personality test that reveals your dating "red flags" an
 - ✅ **SEO optimized** — sitemap.xml (with all 45+ URLs), robots.txt, per-page metadata, Open Graph, JSON-LD structured data
 - ✅ **Legal pages** — Terms of Service, Privacy Policy, About (AdSense-approval ready)
 
+### 🏢 Publisher / Business Identity (AdSense-Ready)
+- ✅ **Legal publisher information disclosed** on Footer + Contact + Privacy + Terms + About pages
+- ✅ **Business Name**: 큰바구니 (Brand: 모두모두) / Rep: 임몽규
+- ✅ **Business Registration No.**: 806-58-00641
+- ✅ **Mail-order Business Reg. No.**: 2024-경기시흥-1913호
+- ✅ **Address**: 경기도 시흥시 · **Email**: modoomodoo88@gmail.com · **Phone**: 010-8265-1123
+- ✅ **Data Controller** identified in Privacy Policy (K-DPA / GDPR compliant)
+- ✅ **Publisher entity** identified in Terms of Service (전자상거래법 준수)
+- ✅ **8-language `businessInfo` labels** — displayed in user's chosen locale
+- ✅ **Reusable `<BusinessInfoCard variant="card|compact|inline" />`** component with 3 layouts
+
 ### 🎯 AdSense Approval Package
 - ✅ **10 original long-form blog articles** (1,500+ chars each) — psychology of dating, red flags, attachment styles, love languages, toxic relationships, communication, healing after breakup, dating apps, cross-cultural dating, healthy relationships
 - ✅ **20 G20 country dating culture pages** — overview, courtship, red/green flags, popular apps, cultural notes for each

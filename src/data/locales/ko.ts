@@ -307,6 +307,21 @@ const ko: LocaleStrings = {
     3: '옐로우 플래그',
     4: '레드플래그 경보',
     5: '공식 위험구역'
+  },
+  businessInfo: {
+    heading: '사업자 정보',
+    subheading: '사이트 운영자 법적 정보',
+    legalName: '상호',
+    brand: '브랜드',
+    representative: '대표자',
+    businessNumber: '사업자등록번호',
+    mailOrderNumber: '통신판매업 신고번호',
+    address: '소재지',
+    email: '이메일',
+    phone: '전화번호',
+    dataController: '개인정보처리자',
+    dataControllerDesc: '본 웹사이트를 통해 수집되는 개인정보의 처리 책임자는 다음과 같습니다:',
+    publisherDesc: '본 사이트는 전자상거래법 및 Google AdSense 게시자 신원 확인 요구사항에 따라 아래 사업자에 의해 운영됩니다.'
   }
 }
 

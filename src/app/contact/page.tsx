@@ -4,7 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BusinessInfoCard from '@/components/BusinessInfoCard'
 import { useLocale } from '@/components/LocaleProvider'
+import { BUSINESS_INFO } from '@/data/business'
 
 export default function ContactPage() {
   const { t } = useLocale()
@@ -54,24 +56,35 @@ export default function ContactPage() {
           <div className="glass-card p-5 text-center">
             <div className="text-3xl mb-2">✉️</div>
             <div className="font-bold text-white mb-1">{t.contact.emailLabel}</div>
-            <a href="mailto:hello@loveredflags.com" className="text-sm text-neon-pink hover:underline">
-              hello@loveredflags.com
+            <a
+              href={`mailto:${BUSINESS_INFO.email}`}
+              className="text-sm text-neon-pink hover:underline break-all"
+            >
+              {BUSINESS_INFO.email}
             </a>
           </div>
           <div className="glass-card p-5 text-center">
-            <div className="text-3xl mb-2">💼</div>
-            <div className="font-bold text-white mb-1">{t.contact.businessLabel}</div>
-            <a href="mailto:business@loveredflags.com" className="text-sm text-neon-cyan hover:underline">
-              business@loveredflags.com
+            <div className="text-3xl mb-2">☎️</div>
+            <div className="font-bold text-white mb-1">{t.businessInfo.phone}</div>
+            <a
+              href={`tel:${BUSINESS_INFO.phoneIntl}`}
+              className="text-sm text-neon-cyan hover:underline"
+            >
+              {BUSINESS_INFO.phone}
             </a>
           </div>
           <div className="glass-card p-5 text-center">
-            <div className="text-3xl mb-2">📰</div>
-            <div className="font-bold text-white mb-1">{t.contact.pressLabel}</div>
-            <a href="mailto:press@loveredflags.com" className="text-sm text-neon-purple hover:underline">
-              press@loveredflags.com
-            </a>
+            <div className="text-3xl mb-2">🏢</div>
+            <div className="font-bold text-white mb-1">{t.businessInfo.address}</div>
+            <div className="text-sm text-neon-purple">
+              {BUSINESS_INFO.address}
+            </div>
           </div>
+        </div>
+
+        {/* Business / Publisher information card */}
+        <div className="mb-10">
+          <BusinessInfoCard variant="card" />
         </div>
 
         {/* Form */}
@@ -173,8 +186,8 @@ export default function ContactPage() {
           {status === 'error' && (
             <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400">
               {t.contact.errorMsg}{' '}
-              <a href="mailto:hello@loveredflags.com" className="underline">
-                hello@loveredflags.com
+              <a href={`mailto:${BUSINESS_INFO.email}`} className="underline break-all">
+                {BUSINESS_INFO.email}
               </a>
               .
             </div>

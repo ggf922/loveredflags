@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BusinessInfoCard from '@/components/BusinessInfoCard'
 import { useLocale } from '@/components/LocaleProvider'
 
 export default function AboutClient() {
@@ -184,6 +185,11 @@ export default function AboutClient() {
               {t.about.contactForm}
             </Link>
           </div>
+        </section>
+
+        {/* Publisher / Business Information — required for AdSense + 전자상거래법 */}
+        <section className="mb-10">
+          <BusinessInfoCard variant="card" />
         </section>
 
         {/* Disclaimer */}

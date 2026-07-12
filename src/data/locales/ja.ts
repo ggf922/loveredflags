@@ -307,6 +307,21 @@ const ja: LocaleStrings = {
     3: 'イエローフラッグ',
     4: 'レッドフラッグ警戒',
     5: '公式危険地帯'
+  },
+  businessInfo: {
+    heading: '事業者情報',
+    subheading: 'サイト運営者の法的情報',
+    legalName: '商号',
+    brand: 'ブランド',
+    representative: '代表者',
+    businessNumber: '事業者登録番号',
+    mailOrderNumber: '通信販売業届出番号',
+    address: '所在地',
+    email: 'メール',
+    phone: '電話番号',
+    dataController: '個人情報管理責任者',
+    dataControllerDesc: '本ウェブサイトを通じて収集される個人情報の処理責任者は以下の通りです:',
+    publisherDesc: '本サイトは韓国電子商取引法およびGoogle AdSense広告主識別要件に基づき、以下の事業者によって運営されています。'
   }
 }
 

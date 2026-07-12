@@ -2,9 +2,12 @@
 
 import Link from 'next/link'
 import { useLocale } from './LocaleProvider'
+import BusinessInfoCard from './BusinessInfoCard'
+import { BUSINESS_INFO } from '@/data/business'
 
 export default function Footer() {
   const { t } = useLocale()
+  const b = BUSINESS_INFO
 
   return (
     <footer className="mt-16 border-t border-white/5 py-12 px-4">
@@ -83,30 +86,35 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="mailto:hello@loveredflags.com"
-                  className="text-white/60 hover:text-white transition-colors"
+                  href={`mailto:${b.email}`}
+                  className="text-white/60 hover:text-white transition-colors break-all"
                 >
-                  hello@loveredflags.com
+                  {b.email}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:business@loveredflags.com"
+                  href={`tel:${b.phoneIntl}`}
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  ☎ {b.phone}
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
                   className="text-white/60 hover:text-white transition-colors"
                 >
                   {t.footer.business}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:press@loveredflags.com"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  {t.footer.press}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Business / Publisher information — required for AdSense + Korean 전자상거래법 */}
+        <div className="pt-6 border-t border-white/5 mb-6">
+          <BusinessInfoCard variant="compact" />
         </div>
 
         {/* Bottom */}

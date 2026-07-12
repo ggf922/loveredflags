@@ -307,6 +307,21 @@ const es: LocaleStrings = {
     3: 'Yellow Flag',
     4: 'Alerta Red Flag',
     5: 'Zona de Peligro Certificada'
+  },
+  businessInfo: {
+    heading: 'Información del Editor',
+    subheading: 'Información legal sobre el operador del sitio',
+    legalName: 'Razón Social',
+    brand: 'Marca',
+    representative: 'Representante',
+    businessNumber: 'Nº de Registro Empresarial',
+    mailOrderNumber: 'Nº de Registro Comercio Electrónico',
+    address: 'Dirección',
+    email: 'Correo',
+    phone: 'Teléfono',
+    dataController: 'Responsable del Tratamiento',
+    dataControllerDesc: 'La siguiente entidad es responsable del tratamiento de los datos personales recopilados a través de este sitio web:',
+    publisherDesc: 'Este sitio web es operado por la siguiente entidad comercial de conformidad con la Ley Coreana de Comercio Electrónico y los requisitos de identificación del editor de Google AdSense.'
   }
 }
 
