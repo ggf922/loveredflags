@@ -29,8 +29,8 @@ A viral, multi-language personality test that reveals your dating "red flags" an
 - ✅ **SEO optimized** — sitemap.xml (with all 45+ URLs), robots.txt, per-page metadata, Open Graph, JSON-LD structured data
 - ✅ **Legal pages** — Terms of Service, Privacy Policy, About (AdSense-approval ready)
 
-### 🎯 AdSense Approval Package (NEW)
-- ✅ **10 original long-form blog articles** (1,500+ chars each, EN + KO) — psychology of dating, red flags, attachment styles, love languages, toxic relationships, communication, healing after breakup, dating apps, cross-cultural dating, healthy relationships
+### 🎯 AdSense Approval Package
+- ✅ **10 original long-form blog articles** (1,500+ chars each) — psychology of dating, red flags, attachment styles, love languages, toxic relationships, communication, healing after breakup, dating apps, cross-cultural dating, healthy relationships
 - ✅ **20 G20 country dating culture pages** — overview, courtship, red/green flags, popular apps, cultural notes for each
 - ✅ **FAQ page** with 20 questions across 5 categories (general/test/results/privacy/technical) + FAQPage JSON-LD
 - ✅ **Contact page** with 6 subjects, Supabase-backed form submission, spam filter
@@ -40,17 +40,26 @@ A viral, multi-language personality test that reveals your dating "red flags" an
 - ✅ **Semantic sitemap** including all 10 blog posts + 20 country pages + FAQ + Contact
 - ✅ **Contact API route** (`/api/contact`) → Supabase `contact_messages` table
 
+### 🌐 Option B — Full 8-Language Translation (COMPLETE)
+- ✅ **8 language UI locales** rewritten to match `LocaleStrings = typeof en` type — en / ko / ja / es / pt / ar (RTL) / ru / zh
+- ✅ **Header / Footer / CookieConsent / LocaleProvider** refactored to `useLocale()` hook
+- ✅ **All pages** (blog / faq / contact / countries / about / result) split into `page.tsx` (server metadata + `generateStaticParams`) + `XxxClient.tsx` (`'use client'` + `useLocale`)
+- ✅ **20 FAQ items × 8 languages** — `question: Record<Locale, string>`, `answer: Record<Locale, string>`
+- ✅ **20 G20 countries × 8 languages** (`src/data/countries/culture.ts`, 1,522 lines) — `overview` / `datingStyle` / `courtship` / `culturalNotes` / `languageOfLove` as `Record<Locale, string>`; `redFlagsToWatch` / `greenFlags` as `Record<Locale, string[]>`; `popularApps` stays `string[]` (brand names)
+- ✅ **10 blog posts × 8 languages** for `title` + `description` (`Record<Locale, string>`); long-form `content` uses `{ en: string; ko?: string } & Partial<Record<Locale, string>>` (EN required, other locales fall back via `getText` helper — acceptable for AdSense long-form original content)
+- ✅ **Build passes**: 45 static pages generated (10 blog + 20 country + 15 other), 0 TypeScript errors
+
 ### Not Yet Implemented
 - ⏳ Instagram Story image generation (html2canvas library included, UI pending)
 - ⏳ Real affiliate link integration (Skyscanner API / Booking.com)
-- ⏳ Blog/FAQ/Contact strings in 8-language locales (currently EN in-page — sufficient for AdSense)
+- ⏳ Full localization of long-form blog body content into all 8 languages (currently EN body with fallback; titles/descriptions are fully translated)
 - ⏳ Google Analytics 4 integration
 
 ### Recommended Next Steps
 1. **Run `supabase/contact_messages.sql`** in Supabase to enable Contact form storage
-2. **Apply for Google AdSense** — content package is now well beyond thin-content threshold
+2. **Apply for Google AdSense** — content package is now well beyond thin-content threshold and fully i18n-ready
 3. **Add Google Analytics 4** for traffic tracking
-4. **Localize new pages** into 8 languages once AdSense is approved
+4. **Optional**: Translate long-form blog article bodies into remaining 6 languages (ja/es/pt/ar/ru/zh) once AdSense is approved
 5. **Marketing** — Blog articles are SEO-ready, share on Reddit r/dating, TikTok
 
 ---
@@ -163,7 +172,7 @@ npm run build
 
 ## 📊 Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router + Turbopack)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + custom neon glassmorphism
 - **State**: React Context (LocaleProvider + QuizProvider)
