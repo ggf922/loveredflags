@@ -18,6 +18,14 @@ interface AdSlotProps {
 export default function AdSlot({ size, slotId, label }: AdSlotProps) {
   const ref = useRef<HTMLModElement>(null)
   const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID
+  // Sticky bottom ad can visually cover page content on mobile, so we opt-in
+  // via env var. Set NEXT_PUBLIC_ADSENSE_STICKY_ENABLED=true only after
+  // AdSense approval + a real sticky slot ID is available.
+  const stickyEnabled = process.env.NEXT_PUBLIC_ADSENSE_STICKY_ENABLED === 'true'
+
+  // Sticky ads: never render before explicitly enabled — prevents the fixed
+  // bottom bar from covering the lower part of the result page on mobile.
+  if (size === 'sticky' && !stickyEnabled) return null
 
   useEffect(() => {
     if (!clientId || !slotId) return
@@ -30,9 +38,7 @@ export default function AdSlot({ size, slotId, label }: AdSlotProps) {
   }, [clientId, slotId])
 
   // 실제 AdSense 클라이언트 ID가 없으면 placeholder 표시
-  // 단, sticky 광고는 승인 전에는 렌더링하지 않음 (모바일에서 하단 콘텐츠를 가리는 이슈 방지)
   if (!clientId || !slotId) {
-    if (size === 'sticky') return null
     const heights: Record<AdSize, string> = {
       banner: 'h-24 md:h-28',
       native: 'h-32',
