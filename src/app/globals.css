@@ -274,3 +274,10 @@ html[dir="rtl"] .option-btn:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 8px 16px;
 }
+
+/* Hide the sticky ad bar entirely when it has no rendered child ad
+   (e.g. before AdSense is approved). Prevents the empty bar from
+   covering the bottom of the result page on mobile. */
+.sticky-ad-bottom:empty {
+  display: none;
+}

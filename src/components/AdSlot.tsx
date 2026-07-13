@@ -30,7 +30,9 @@ export default function AdSlot({ size, slotId, label }: AdSlotProps) {
   }, [clientId, slotId])
 
   // 실제 AdSense 클라이언트 ID가 없으면 placeholder 표시
+  // 단, sticky 광고는 승인 전에는 렌더링하지 않음 (모바일에서 하단 콘텐츠를 가리는 이슈 방지)
   if (!clientId || !slotId) {
+    if (size === 'sticky') return null
     const heights: Record<AdSize, string> = {
       banner: 'h-24 md:h-28',
       native: 'h-32',
